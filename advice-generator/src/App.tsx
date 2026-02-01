@@ -38,7 +38,9 @@ function App() {
       setAdvice(result.slip);
       setLoading(false);
     } catch (error) {
-      setError(error instanceof Error ? error.message : "An error occurred");
+      setError(
+        error instanceof Error ? error.message : "Failed to fetch advice.",
+      );
       setLoading(false);
     }
   }
@@ -52,7 +54,7 @@ function App() {
       <Card className="w-md m-4 bg-[#323a49] shadow-2xl border-none p-10 text-center relative ">
         {loading && <Spinner className="self-center text-[#cee3e9] size-8" />}
         {error && (
-          <CardDescription className="text-[#cee3e9] text-xl font-bold">
+          <CardDescription className="text-[#cee3e9] text-lg font-semibold italic">
             {error}
           </CardDescription>
         )}
@@ -61,30 +63,49 @@ function App() {
             <CardHeader className="text-[#52ffa8] tracking-widest font-bold">
               {`Advice #${advice?.id}`}
             </CardHeader>
-            <CardContent className="text-[#cee3e9] font-extrabold text-2xl">
+            <CardContent className="text-[#cee3e9] font-bold tracking-wide text-2xl">
               {`“${advice?.advice}”`}
             </CardContent>
-
-            <img
-              src={MobileDivider}
-              className="block md:hidden w-full mb-4"
-              alt=""
-            />
-            <img
-              src={DesktopDivider}
-              className="hidden md:block w-full mb-4"
-              alt=""
-            />
-            <Button
-              className="bg-[#52ffa8] p-2 size-10 rounded-full absolute left-1/2 bottom-0
-               -translate-x-1/2 translate-y-1/2 hover:bg-[#52ffa8] hover:shadow-[0_0_20px_#52ffa8]"
-              onClick={getAdvice}
-            >
-              <img src={DiceIcon} className="w-full" alt="Get new advice" />
-            </Button>
           </>
         )}
+        <img
+          src={MobileDivider}
+          className="block md:hidden w-full mb-4"
+          alt=""
+        />
+        <img
+          src={DesktopDivider}
+          className="hidden md:block w-full mb-4"
+          alt=""
+        />
+        <Button
+          className="bg-[#52ffa8] p-2 size-10 rounded-full absolute left-1/2 bottom-0
+               -translate-x-1/2 translate-y-1/2 hover:bg-[#52ffa8] hover:shadow-[0_0_20px_#52ffa8]"
+          disabled={loading}
+          onClick={getAdvice}
+        >
+          <img src={DiceIcon} className="w-full" alt="Get new advice" />
+        </Button>
       </Card>
+      <div className="p-2 tracking-wide absolute self-end text-sm text-center text-slate-300">
+        Challenge by{" "}
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          className="text-blue-400"
+        >
+          Frontend Mentor
+        </a>
+        . Coded by{" "}
+        <a
+          href="https://www.frontendmentor.io/profile/amangofer"
+          target="_blank"
+          className="text-blue-400"
+        >
+          Amanuel Haile
+        </a>
+        .
+      </div>
     </div>
   );
 }
