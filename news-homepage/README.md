@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Code]()
-- Live Site URL: [Live]()
+- Solution URL: [Code](https://github.com/amangofer/frontendmentor-challenges-react/tree/main/news-homepage)
+- Live Site URL: [Live](https://news-homepage-42.netlify.app/)
 
 ## My process
 
