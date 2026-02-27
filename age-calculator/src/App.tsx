@@ -18,6 +18,7 @@ type BirthDate = {
 };
 
 gsap.registerPlugin(useGSAP);
+
 function App() {
   const [age, setAge] = useState<Age | undefined>();
   const {
@@ -92,15 +93,15 @@ function App() {
     <>
       <main
         ref={container}
-        className="w-full h-svh flex justify-center items-center font-poppins bg-neutral-grey-200"
+        className="w-full px-4 h-svh flex justify-center items-center font-poppins bg-neutral-grey-200"
       >
-        <div className="w-xl p-8 rounded-2xl rounded-br-[25%] bg-neutral-white">
+        <div className="w-sm md:w-lg p-6 pb-12 rounded-2xl rounded-br-[25%] bg-neutral-white">
           <form
             noValidate
             onSubmit={handleSubmit(ageCalculator)}
-            className="py-4 relative border-b border-neutral-grey-200"
+            className="pt-4 pb-14 md:pb-6 relative border-b border-neutral-grey-200"
           >
-            <div className="w-md pr-6 mb-4 flex gap-8">
+            <div className="flex gap-2 md:gap4 mb-4 md:pr-22">
               <div className="flex flex-col">
                 <label
                   htmlFor="day"
@@ -111,7 +112,7 @@ function App() {
                 <input
                   id="day"
                   placeholder="DD"
-                  className={`w-full px-4 py-2 text-xl font-bold rounded-md border border-neutral-grey-200 placeholder:text-neutral-grey-500 ${getEditorStyle(errors.day)}`}
+                  className={`w-full px-2 md:px-4 py-2 text-xl font-bold rounded-md border border-neutral-grey-200 placeholder:text-neutral-grey-500 ${getEditorStyle(errors.day)}`}
                   {...register("day", {
                     required: "This field is required",
                     pattern: { value: /\d+/, message: "Enter number only" },
@@ -176,11 +177,11 @@ function App() {
                 <ValidationError fieldError={errors.year} />
               </div>
             </div>
-            <button className="absolute bottom-0 right-0 transform translate-y-1/2 size-16 rounded-full bg-primary-purple-500 hover:bg-neutral-black cursor-pointer">
+            <button className="absolute bottom-0 right-1/2 md:right-0 transform translate-y-1/2 translate-x-1/2 md:translate-x-0 size-16 rounded-full bg-primary-purple-500 hover:bg-neutral-black cursor-pointer">
               <img src={Arrow} className="w-full p-4" />
             </button>
           </form>
-          <div className="mt-4 text-7xl italic lowercase font-extrabold">
+          <div className="mt-14 text-5xl md:text-7xl italic lowercase font-extrabold">
             <div className="">
               <span id="years" className="text-primary-purple-500 ">
                 {age ? age.years : "--"}
