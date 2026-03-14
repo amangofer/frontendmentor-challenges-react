@@ -1,3 +1,4 @@
+import { Footer } from "./componentes/Footer";
 import { Header } from "./componentes/Header";
 import { ImageGallery } from "./componentes/ImageGallery";
 import { Services } from "./componentes/Services";
@@ -13,6 +14,7 @@ function App() {
           <Testimonials />
           <ImageGallery />
         </main>
+        <Footer />
       </div>
     </>
   );
