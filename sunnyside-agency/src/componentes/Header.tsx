@@ -21,7 +21,11 @@ export function Header() {
       <div className="flex justify-between">
         <div>
           <a href="#">
-            <img src={Logo} alt="Logo" />
+            <img
+              src={Logo}
+              alt="Sunnyside Logo"
+              className="brightness-0 invert"
+            />
           </a>
         </div>
         <div className="md:hidden">
