@@ -28,19 +28,20 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Code]()
-- Live Site URL: [Live]()
+- Solution URL: [Code](https://github.com/amangofer/frontendmentor-challenges-react/tree/main/sunnyside-agency)
+- Live Site URL: [Live](https://sunnyside-agency-42.netlify.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- HTML `<picture>` Tag
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 
 ### Useful resources
 
