@@ -2,7 +2,7 @@ import Logo from "../assets/images/logo.svg";
 import FacebookIcon from "../assets/images/icon-facebook.svg";
 import InstagramIcon from "../assets/images/icon-instagram.svg";
 import PinterestIcon from "../assets/images/icon-pinterest.svg";
-import TweitterIcon from "../assets/images/icon-twitter.svg";
+import TwitterIcon from "../assets/images/icon-twitter.svg";
 
 const navItems = [
   { id: 1, name: "About", href: "#" },
@@ -11,10 +11,34 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { id: 1, name: "Instagram", href: "#", icon: FacebookIcon },
-  { id: 2, name: "Facebook", href: "#", icon: InstagramIcon },
-  { id: 3, name: "Pintrest", href: "#", icon: PinterestIcon },
-  { id: 4, name: "twetter", href: "#", icon: TweitterIcon },
+  {
+    id: 1,
+    name: "Instagram",
+    href: "#",
+    icon: InstagramIcon,
+    alt: "View our works on Instagram",
+  },
+  {
+    id: 2,
+    name: "Facebook",
+    href: "#",
+    icon: FacebookIcon,
+    alt: "Follow us on Facebook",
+  },
+  {
+    id: 3,
+    name: "Pintrest",
+    href: "#",
+    icon: PinterestIcon,
+    alt: "Follow us on Pinterest",
+  },
+  {
+    id: 4,
+    name: "Twetter",
+    href: "#",
+    icon: TwitterIcon,
+    alt: "Follow us on Tweitter",
+  },
 ];
 
 export function Footer() {
@@ -45,6 +69,7 @@ export function Footer() {
                   <img
                     src={socialLink.icon}
                     className="hover:brightness-0 hover:invert"
+                    alt={socialLink.alt}
                   />
                 </a>
               </li>

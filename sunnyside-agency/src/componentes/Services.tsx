@@ -13,7 +13,7 @@ export function Services() {
       <div className="text-center flex flex-col md:flex-row-reverse">
         <picture className="w-full md:w-1/2">
           <source media="(min-width:768px)" srcSet={TransformDesktop} />
-          <img src={Transform} className="w-full" />
+          <img src={Transform} alt="" className="w-full" />
         </picture>
         <div className="w-full md:w-1/2 p-8 flex gap-8 flex-col justify-center items-center">
           <h2 className="text-3xl font-bold font-fraunces">
@@ -35,7 +35,7 @@ export function Services() {
       <div className=" text-center flex flex-col md:flex-row">
         <picture className="w-full md:w-1/2">
           <source media="(min-width:768px)" srcSet={StandOutDesktop} />
-          <img src={StandOut} className="w-full" />
+          <img src={StandOut} alt="" className="w-full" />
         </picture>
         <div className="w-full md:w-1/2 p-8 flex gap-8 flex-col justify-center items-center">
           <h2 className="text-3xl font-bold font-fraunces">
@@ -59,7 +59,7 @@ export function Services() {
         <div className="md:w-1/2 relative text-primary-green-800">
           <picture>
             <source media="(min-width:768px)" srcSet={GraphicDesktop} />
-            <img src={Graphic} className="w-full" />
+            <img src={Graphic} alt="" className="w-full" />
           </picture>
           <div className="absolute bottom-0 mb-8 md:mb-0 w-full text-center p-8 flex gap-8 flex-col justify-center items-center">
             <h2 className="text-3xl font-bold font-fraunces">
@@ -75,7 +75,7 @@ export function Services() {
         <div className="md:w-1/2 relative text-primary-blue-800">
           <picture>
             <source media="(min-width:768px)" srcSet={PhotographyDesktop} />
-            <img src={Photography} className="w-full" />
+            <img src={Photography} alt="" className="w-full" />
           </picture>
           <div className="absolute bottom-0 mb-8 md:mb-0 w-full text-center p-8 flex gap-8 flex-col justify-center items-center">
             <h2 className="text-3xl font-bold font-fraunces">Photography</h2>

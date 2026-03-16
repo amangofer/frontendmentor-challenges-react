@@ -20,7 +20,7 @@ export function Header() {
     <header className="w-full relative h-full px-6 md:px-12 py-8 bg-header-mobile md:bg-header-desktop bg-cover bg-no-repeat bg-center">
       <div className="flex justify-between">
         <div>
-          <a href="#">
+          <a href="#" aria-label="Go to Home page">
             <img
               src={Logo}
               alt="Sunnyside Logo"
@@ -28,35 +28,37 @@ export function Header() {
             />
           </a>
         </div>
-        <div className="md:hidden">
+        <button className="md:hidden">
           <img
             src={MenuIcon}
             alt="Menu Icon"
             className="cursor-pointer"
             onClick={toggleMenu}
           />
-        </div>
+        </button>
         {/* Desktop Nav */}
-        <div className="hidden md:block">
-          <ul className="flex gap-8 items-center">
-            {navItems.map((navItem) => {
-              return (
-                <li
-                  key={navItem.id}
-                  className="text-md font-semibold text-neutral-white"
-                >
-                  <a href={navItem.href}>{navItem.name}</a>
-                </li>
-              );
-            })}
+        <nav className="hidden md:block">
+          <div className="flex gap-8 items-center">
+            <ul className="flex gap-8 items-center">
+              {navItems.map((navItem) => {
+                return (
+                  <li
+                    key={navItem.id}
+                    className="text-md font-semibold text-neutral-white border-b border-b-transparent hover:border-b-neutral-white"
+                  >
+                    <a href={navItem.href}>{navItem.name}</a>
+                  </li>
+                );
+              })}
+            </ul>
             <button
               type="button"
-              className="px-6 py-4 bg-neutral-white rounded-full text-sm font-fraunces font-semibold uppercase cursor-pointer hover:text-neutral-white hover:bg-sky-300"
+              className="px-6 md:px-8 py-4 bg-neutral-white rounded-full text-sm font-fraunces font-semibold uppercase cursor-pointer transition-colors duration-300 ease-in-out hover:text-neutral-white hover:bg-sky-300"
             >
               Content
             </button>
-          </ul>
-        </div>
+          </div>
+        </nav>
       </div>
       <nav
         className={`${isOpen ? "block" : "hidden"} absolute inset-x-6 top-24 z-50 md:hidden`}

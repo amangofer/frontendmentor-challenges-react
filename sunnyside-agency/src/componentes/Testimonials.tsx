@@ -11,6 +11,7 @@ const testimonials = [
     title: "Marketing Director",
     comment:
       "We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.",
+    alt: "Photo of Emily",
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const testimonials = [
     title: "Chief Operating Officer",
     comment:
       "Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.",
+    alt: "Photo of Thomas",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const testimonials = [
     title: "Business Owner",
     comment:
       "Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!",
+    alt: "Photo of Jennie",
   },
 ];
 
@@ -45,6 +48,7 @@ export function Testimonials() {
               name={testimonial.name}
               title={testimonial.title}
               comment={testimonial.comment}
+              alt={testimonial.alt}
             />
           );
         })}
