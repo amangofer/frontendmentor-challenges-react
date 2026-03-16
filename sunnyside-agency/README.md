@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/screenshot.png)
+<img src="./src/assets/screenshot.png" width="400">
 
 ### Links
 
