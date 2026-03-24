@@ -1,10 +1,10 @@
+import { Header } from "./components/Header";
+
 function App() {
   return (
     <>
-      <section id="center" className="h-svh flex justify-center items-center">
-        <div>
-          <h1>Get started</h1>
-        </div>
+      <section className="w-full h-svh p-4 font-be-vietnam-pro text-neutral-gray-950 bg-neutral-gray-50">
+        <Header />
       </section>
     </>
   );
