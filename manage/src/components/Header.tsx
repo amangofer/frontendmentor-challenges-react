@@ -48,7 +48,7 @@ export function Header() {
           return (
             <li
               key={navItem.id}
-              className="list-none font-bold hover:opacity-[.5]"
+              className="list-none font-semibold hover:opacity-[.5]"
             >
               <a href={navItem.href}>{navItem.name}</a>
             </li>

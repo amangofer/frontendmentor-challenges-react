@@ -9,4 +9,8 @@
   --color-neutral-gray-50: hsl(0, 0%, 98%);
 
   --font-be-vietnam-pro: "Be Vietnam Pro", sans-serif;
+
+  --background-image-tablet: url("./assets/images/bg-tablet-pattern.svg");
+  --background-image-section-desktop: url("./assets/images/bg-simplify-section-desktop.svg");
+  --background-image-section-mobile: url("./assets/images/bg-simplify-section-mobile.svg");
 }
