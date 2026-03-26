@@ -2,21 +2,29 @@ import IlustrationIntro from "../assets/images/illustration-intro.svg";
 
 export function Hero() {
   return (
-    <section className="my-4 p-4 grid place-items-center grid-cols-1 gap-4 md:grid-cols-2">
-      <div className="text-center md:text-left space-y-6 row-start-2 md:row-start-1">
-        <h1 className="text-[calc(1.5rem+3vw)] lg:text-5xl font-bold w-md">
-          Bring everyone together to build better products.
-        </h1>
-        <p className="w-md opacity-50">
-          Manage makes it simple for software teams to plan day-to-day tasks
-          while keeping the larger team goals in view.
-        </p>
-        <button className="bg-primary-orange-400 text-neutral-gray-50 px-6 py-3 font-semibold rounded-full cursor-pointer hover:opacity-[.75]">
-          Get Started
-        </button>
-      </div>
-      <div className="row-start-1 ">
-        <img src={IlustrationIntro} />
+    <section className="">
+      <div className="container mx-auto px-6 py-12 md:py-20">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-20">
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Bring everyone together to build better products.
+            </h1>
+
+            <p className="text-primary-blue-950/50 text-lg mb-8 max-w-lg mx-auto lg:mx-0">
+              Manage makes it simple for software teams to plan day-to-day tasks
+              while keeping the larger team goals in view.
+            </p>
+            <a
+              href="#"
+              className="inline-block bg-primary-orange-400 text-neutral-gray-50 font-bold hover:opacity-75 py-3 px-8 rounded-full shadow-lg transition-colors"
+            >
+              Get Started
+            </a>
+          </div>
+          <div className="flex-1">
+            <img src={IlustrationIntro} />
+          </div>
+        </div>
       </div>
     </section>
   );
