@@ -3,6 +3,8 @@ import IlustrationIntro from "../assets/images/illustration-intro.svg";
 export function Hero() {
   return (
     <section className="">
+      <div className="bg-tablet -z-10 bg-no-repeat size-full bg-contain absolute bg-top-right -top-10 md:-top-40 lg:-top-40 -right-20 md:-right-60 lg:-right-30"></div>
+
       <div className="container mx-auto px-6 py-12 md:py-20">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-20">
           <div className="flex-1 text-center md:text-left">

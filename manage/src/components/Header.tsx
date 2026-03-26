@@ -19,7 +19,7 @@ export function Header() {
   }
 
   return (
-    <header className="relative ">
+    <header className="relative">
       <nav className="container mx-auto p-6 flex justify-between items-center">
         <a href="/" aria-label="Manage Homepage">
           <img src={Logo} alt="" />
