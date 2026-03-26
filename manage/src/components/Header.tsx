@@ -3,61 +3,84 @@ import MenuIcon from "../assets/images/icon-hamburger.svg";
 import CloseIcon from "../assets/images/icon-close.svg";
 import { useState } from "react";
 
-const navItems = [
-  { id: 1, name: "Pricing", href: "#" },
-  { id: 2, name: "Product", href: "#" },
-  { id: 3, name: "About Us", href: "#" },
-  { id: 4, name: "Careers", href: "#" },
-  { id: 5, name: "Community", href: "#" },
+const navLinks = [
+  { name: "Pricing", href: "#pricing" },
+  { name: "Product", href: "#product" },
+  { name: "About Us", href: "#about" },
+  { name: "Careers", href: "#careers" },
+  { name: "Community", href: "#community" },
 ];
 
 export function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean | null>(null);
 
   function toggleMenu() {
     setMenuOpen(!menuOpen);
   }
 
   return (
-    <header className="relative p-4 flex justify-between items-center">
-      <a href="/" aria-label="Manage Homepage">
-        <img src={Logo} alt="" />
-      </a>
+    <header className="relative ">
+      <nav className="container mx-auto p-6 flex justify-between items-center">
+        <a href="/" aria-label="Manage Homepage">
+          <img src={Logo} alt="" />
+        </a>
+
+        {/* Desktop Menu  */}
+        <div className="flex">
+          <ul className="hidden md:flex gap-8 items-center">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  className="text-primary-blue-950 font-medium hover:opacity-75 transition-colors"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a
+          href="#"
+          className="hidden lg:inline-flex bg-primary-orange-400 hover:opacity-75 text-neutral-gray-50 font-bold py-3 px-6 rounded-full transition-colors shadow-lg"
+        >
+          Get Started
+        </a>
+        <button
+          className="md:hidden"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <img src={menuOpen ? CloseIcon : MenuIcon} alt="" />
+        </button>
+      </nav>
 
       {/* Mobile Menu  */}
-      <div className="md:hidden flex flex-col justify-between items-center">
-        <button onClick={toggleMenu}>
-          <img src={menuOpen ? CloseIcon : MenuIcon} alt="Menu Icon" />
-        </button>
-        <nav
-          className={`${menuOpen ? "block" : "hidden"} bg-neutral-gray-50 p-4 flex flex-col gap-4 justify-center items-center absolute w-xs top-15 left-1/2 transform -translate-x-1/2 rounded shadow-lg`}
-        >
-          {navItems.map((navItem) => {
-            return (
-              <li key={navItem.id} className="list-none font-bold">
-                <a href={navItem.href}>{navItem.name}</a>
+      <div
+        className={`md:hidden absolute top-full left-0 right-0 bg-neutral-gray-50 shadow-lg mx-6 rounded-lg py-6 ${menuOpen === null ? "hidden" : ""} ${menuOpen ? "animate-fade-in" : "animate-fade-out"}`}
+      >
+        <div className="flex flex-col items-center gap-4">
+          <ul className="flex flex-col items-center gap-4">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  onClick={toggleMenu}
+                  className="text-primary-blue-950 font-medium py-2 hover:opacity-75 transition-colors"
+                >
+                  {link.name}
+                </a>
               </li>
-            );
-          })}
-        </nav>
+            ))}
+          </ul>
+          <a
+            href="#"
+            className="mt-2 bg-primary-orange-400 hover:opacity-75 text-neutral-gray-50 font-bold py-3 px-6 rounded-full transition-colors shadow-lg"
+          >
+            Get Started
+          </a>
+        </div>
       </div>
-
-      {/* Desktop Menu  */}
-      <nav className="hidden px-4 w-lg md:flex gap-4 justify-between items-center">
-        {navItems.map((navItem) => {
-          return (
-            <li
-              key={navItem.id}
-              className="list-none font-semibold hover:opacity-[.5]"
-            >
-              <a href={navItem.href}>{navItem.name}</a>
-            </li>
-          );
-        })}
-      </nav>
-      <button className="hidden lg:block bg-primary-orange-400 text-neutral-gray-50 px-6 py-3 font-semibold rounded-full cursor-pointer hover:opacity-[.75]">
-        Get Started
-      </button>
     </header>
   );
 }
