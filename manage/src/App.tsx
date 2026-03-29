@@ -1,6 +1,7 @@
 import { Features } from "./components/Features";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { Testimonials } from "./components/Testimonials";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <main className="relative">
         <Hero />
         <Features />
+        <Testimonials />
       </main>
     </div>
   );
