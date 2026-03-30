@@ -39,7 +39,8 @@ export function Testimonials() {
   }
 
   return (
-    <section className="py-8">
+    <section className="relative py-8">
+      <div className="hidden lg:block bg-tablet -z-10 bg-no-repeat size-187 bg-contain absolute -top-2/4 -left-1/3"></div>
       <h1 className="text-center mb-12 text-3xl lg:text-4xl font-bold">
         What they've said
       </h1>
