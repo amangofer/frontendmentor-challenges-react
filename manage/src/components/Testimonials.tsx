@@ -65,6 +65,7 @@ export function Testimonials() {
         <div className="mt-4 flex justify-center items-center gap-1">
           {testimonials.map((_, i) => (
             <button
+              key={i}
               onClick={() => {
                 changeIndex(i);
               }}
@@ -76,7 +77,10 @@ export function Testimonials() {
       <div className="hidden my-34 mx-auto md:flex">
         <div className="flex items-center justify-center gap-8 animate-slide pr-4">
           {testimonials.map((testimonial) => (
-            <div className="relative flex-none w-xl h-75 p-4 bg-neutral-gray-50 text-xl text-center content-center shadow-sm">
+            <div
+              key={testimonial.name}
+              className="relative flex-none w-xl h-75 p-4 bg-neutral-gray-50 text-xl text-center content-center shadow-sm"
+            >
               <img
                 src={testimonial.avater}
                 alt=""
@@ -96,7 +100,10 @@ export function Testimonials() {
           className="flex items-center justify-center gap-8 animate-slide pr-1"
         >
           {testimonials.map((testimonial) => (
-            <div className="relative flex-none w-xl h-75 p-4 bg-neutral-gray-50 text-xl text-center content-center shadow-sm">
+            <div
+              key={testimonial.name}
+              className="relative flex-none w-xl h-75 p-4 bg-neutral-gray-50 text-xl text-center content-center shadow-sm"
+            >
               <img
                 src={testimonial.avater}
                 alt=""
