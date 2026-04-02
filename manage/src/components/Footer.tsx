@@ -1,3 +1,4 @@
+import { useRef, useState, type FormEvent } from "react";
 import Logo from "../assets/images/logo.svg?react";
 import FacebookIcon from "../assets/images/icon-facebook.svg?react";
 import YouTubeIcon from "../assets/images/icon-youtube.svg?react";
@@ -27,23 +28,53 @@ const footerLinks = {
 };
 
 export function Footer() {
+  const emailRef = useRef<HTMLInputElement>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const email = emailRef.current?.value || "";
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!email) {
+      setError("Email is required");
+    } else if (!emailRegex.test(email)) {
+      setError("Please insert a valid email");
+    } else {
+      if (emailRef.current) emailRef.current.value = "";
+      setError(null);
+    }
+  };
   return (
     <footer className="w-full px-4 lg:mx-0 py-10 bg-neutral-gray-950 text-neutral-gray-50">
       <div className="container mx-auto py-4 flex flex-col justify-between md:flex-row-reverse">
         <div className="flex flex-col justify-between">
-          <div className="py-4 flex gap-4 justify-between items-center text-primary-blue-950">
-            <input
-              className="bg-white px-4 py-2 rounded-full"
-              type="email"
-              placeholder="Updates in your inbox…"
-            />
-            <a
-              href="#"
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="py-4 flex gap-4 justify-between items-center text-primary-blue-950"
+          >
+            <div>
+              <input
+                className={`${error ? "text-primary-orange-400" : "text-primary-blue-950"} bg-white px-4 py-2 rounded-full`}
+                type="email"
+                name="email"
+                ref={emailRef}
+                placeholder="Updates in your inbox…"
+              />
+              {error && (
+                <p className="px-4 py-2 text-primary-orange-400">{error}</p>
+              )}
+            </div>
+
+            <button
+              type="submit"
               className="px-6 py-2 rounded-full bg-primary-orange-400 text-neutral-gray-50"
             >
               Go
-            </a>
-          </div>
+            </button>
+          </form>
           <p className="hidden md:block my-4 text-sm text-center text-neutral-gray-50/50">
             Copyright 2020. All Rights Reserved
           </p>
