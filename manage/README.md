@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Code]()
-- Live Site URL: [Live]()
+- Solution URL: [Code](https://github.com/amangofer/frontendmentor-challenges-react/tree/main/manage)
+- Live Site URL: [Live](https://manage-42.netlify.app/)
 
 ## My process
 
