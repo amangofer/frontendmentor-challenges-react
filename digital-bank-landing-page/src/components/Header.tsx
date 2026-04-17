@@ -18,8 +18,8 @@ export function Header() {
   }
 
   return (
-    <header className="bg-white shadow-md">
-      <div className="container relative py-4 md:mx-auto flex justify-between items-center">
+    <header className="bg-white shadow-md relative z-50">
+      <div className="container relative p-4 md:mx-auto flex justify-between items-center">
         <div>
           <a href="/">
             <LogoLight />
