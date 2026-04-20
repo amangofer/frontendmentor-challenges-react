@@ -32,8 +32,8 @@ const services = [
 
 export function Services() {
   return (
-    <section className="px-4 py-10 bg-neutral-gray-100">
-      <div className="container mx-auto text-center md:text-left">
+    <section className="py-10 bg-neutral-gray-100">
+      <div className="container mx-auto px-4 text-center md:text-left">
         <div className="max-w-lg md:mt-24 mb-6 space-y-6">
           <h2 className="text-3xl">Why choose Digitalbank?</h2>
           <p className="text-sm text-neutral-gray-600">
