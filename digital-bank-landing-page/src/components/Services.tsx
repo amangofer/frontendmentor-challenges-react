@@ -41,7 +41,7 @@ export function Services() {
             financial hub. Control your finances like never before.
           </p>
         </div>
-        <div className="pt-4 flex flex-col md:flex-row gap-10">
+        <div className="pt-6 flex flex-col md:flex-row gap-10">
           {services.map((service) => (
             <div className="flex flex-col items-center md:items-start gap-4">
               <service.icon />
