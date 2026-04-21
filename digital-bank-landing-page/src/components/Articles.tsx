@@ -63,7 +63,10 @@ export function Articles() {
               />
               <div className="p-6 text-neutral-gray-600 space-y-2">
                 <span className="text-xs block">article.author</span>
-                <a href="" className="block text-primary-blue font-semibold">
+                <a
+                  href=""
+                  className="block text-primary-blue font-semibold hover:text-primary-green"
+                >
                   {article.link}
                 </a>
                 <p className="text-sm">{article.snippet}</p>
