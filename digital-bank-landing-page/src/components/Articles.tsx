@@ -48,7 +48,7 @@ const articles = [
 
 export function Articles() {
   return (
-    <section className="bg-neutral-gray-50">
+    <section className="bg-neutral-gray-50 pb-10">
       <div className="container mx-auto p-4">
         <h2 className="my-10 text-primary-blue text-center text-3xl font-medium md:text-left">
           Latest Articles
@@ -59,10 +59,10 @@ export function Articles() {
               <img
                 src={article.image.img}
                 alt={article.image.alt}
-                className="h-full md:h-50"
+                className="h-full w-full md:h-50"
               />
               <div className="p-6 text-neutral-gray-600 space-y-2">
-                <span className="text-xs block">article.author</span>
+                <span className="text-xs block">{article.author}</span>
                 <a
                   href=""
                   className="block text-primary-blue font-semibold hover:text-primary-green"
