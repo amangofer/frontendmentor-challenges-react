@@ -27,9 +27,12 @@ export function Hero() {
             one-stop-shop for spending, saving, budgeting, investing, and much
             more.
           </p>
-          <button className="px-8 py-3 rounded-full font-semibold text-white bg-linear-to-tr from-primary-cyan to-primary-green hover:opacity-85 cursor-pointer">
+          <a
+            href="#"
+            className="px-8 py-3 rounded-full font-semibold text-white bg-linear-to-tr from-primary-cyan to-primary-green hover:opacity-85 cursor-pointer"
+          >
             Request Invite
-          </button>
+          </a>
         </div>
       </div>
     </section>
