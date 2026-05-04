@@ -6,11 +6,41 @@ import PinterestIcon from "../assets/images/icon-pinterest.svg";
 import InstagramIcon from "../assets/images/icon-instagram.svg";
 
 const socialLinkes = [
-  { link: "Facebook", href: "https://facebook.com", icon: FacbookIcon },
-  { link: "YouTube", href: "https://youtube.com", icon: YouTubeIcon },
-  { link: "X", href: "https://x.com", icon: XIcon },
-  { link: "Pinterest", href: "https://pinterest.com", icon: PinterestIcon },
-  { link: "Instagram", href: "https://instagram.com", icon: InstagramIcon },
+  {
+    link: "Facebook",
+    href: "https://facebook.com",
+    icon: FacbookIcon,
+    alt: "Facebook Icon",
+    ariaLabel: "Follow us on Facebook",
+  },
+  {
+    link: "YouTube",
+    href: "https://youtube.com",
+    icon: YouTubeIcon,
+    alt: "YouTube Icon",
+    ariaLabel: "Follow us on YouTube",
+  },
+  {
+    link: "X",
+    href: "https://x.com",
+    icon: XIcon,
+    alt: "X Icon",
+    ariaLabel: "Follow us on X",
+  },
+  {
+    link: "Pinterest",
+    href: "https://pinterest.com",
+    icon: PinterestIcon,
+    alt: "Pinterest Icon",
+    ariaLabel: "Follow us on Pinterest",
+  },
+  {
+    link: "Instagram",
+    href: "https://instagram.com",
+    icon: InstagramIcon,
+    alt: "Instagram Icon",
+    ariaLabel: "Follow us on Instagram",
+  },
 ];
 
 const navLinks = [
@@ -31,13 +61,17 @@ export function Footer() {
             <LogoLight className="mb-6" />
             <div className="mb-2 flex gap-4 justify-center">
               {socialLinkes.map((social) => (
-                <a key={social.link} href={social.href}>
-                  <img src={social.icon} />
+                <a
+                  key={social.link}
+                  href={social.href}
+                  aria-label={social.ariaLabel}
+                >
+                  <img src={social.icon} alt={social.alt} />
                 </a>
               ))}
             </div>
           </div>
-          <nav className="md:h-30 w-full my-4 flex flex-col flex-wrap gap-4">
+          <nav className="md:h-30 md:ml-16 w-full my-4 flex flex-col flex-wrap gap-4 text-center md:text-left">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -51,9 +85,12 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col justify-between gap-8">
-          <button className="px-8 py-3 rounded-full font-semibold text-white bg-linear-to-tr from-primary-cyan to-primary-green hover:opacity-85 cursor-pointer">
+          <a
+            href="#"
+            className="px-8 py-3 rounded-full font-semibold text-white bg-linear-to-tr from-primary-cyan to-primary-green hover:opacity-85 cursor-pointer"
+          >
             Request Invite
-          </button>
+          </a>
           <span className="block my-4 text-neutral-gray-600">
             © Digitalbank. All Rights Reserved
           </span>
