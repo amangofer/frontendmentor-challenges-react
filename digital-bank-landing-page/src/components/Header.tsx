@@ -25,7 +25,12 @@ export function Header() {
             <LogoLight />
           </a>
         </div>
-        <button onClick={toggleMenu} className="md:hidden cursor-pointer">
+        <button
+          type="button"
+          onClick={toggleMenu}
+          className="md:hidden cursor-pointer"
+          aria-label="Menu Button"
+        >
           <MenuIcon />
         </button>
         {/* Mobile Menu */}
@@ -61,9 +66,12 @@ export function Header() {
             ))}
           </ul>
         </nav>
-        <button className="hidden lg:block px-8 py-3 rounded-full font-semibold text-white bg-linear-to-tr from-primary-cyan to-primary-green hover:opacity-85 cursor-pointer">
+        <a
+          href="#"
+          className="hidden lg:block px-8 py-3 rounded-full font-semibold text-white bg-linear-to-tr from-primary-cyan to-primary-green hover:opacity-85 cursor-pointer"
+        >
           Request Invite
-        </button>
+        </a>
       </div>
     </header>
   );
