@@ -20,6 +20,7 @@ export function Header() {
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
+
   return (
     <header className="text-base">
       <div className="container relative px-4 md:mx-auto my-8 flex justify-between items-center">
@@ -29,7 +30,7 @@ export function Header() {
           </a>
           <ul className="hidden ml-8 md:flex gap-8 items-center">
             {navLinks.map((navLink) => (
-              <li onClick={toggleMenu}>
+              <li key={navLink.title} >
                 <a
                   href={navLink.href}
                   className="font-semibold text-neutral-gray-500 hover:text-neutral-gray-950"
@@ -43,7 +44,7 @@ export function Header() {
         <div>
           <ul className="hidden md:flex gap-8 items-center">
             {authLinks.map((authLink) => (
-              <li onClick={toggleMenu}>
+              <li key={authLink.title} >
                 <a
                   href={authLink.href}
                   className={`${authLink.type == "btn" ? "bg-primary-blue-400 text-white rounded-full py-2 px-6 hover:bg-primary-blue-400/75" : "text-neutral-gray-500 hover:text-neutral-gray-950"} font-semibold`}
@@ -64,14 +65,14 @@ export function Header() {
           <div className="flex flex-col w-full text-center py-8 font-semibold gap-4">
             <ul className="space-y-8 border-b border-neutral-gray-500 mx-6 pb-8">
               {navLinks.map((navLink) => (
-                <li onClick={toggleMenu}>
+                <li key={navLink.title} onClick={toggleMenu}>
                   <a href={navLink.href}>{navLink.title}</a>
                 </li>
               ))}
             </ul>
             <ul className="space-y-8 mx-6">
               {authLinks.map((authLink) => (
-                <li onClick={toggleMenu}>
+                <li key={authLink.title} onClick={toggleMenu}>
                   <a
                     href={authLink.href}
                     className={`${authLink.type == "btn" ? "bg-primary-blue-400 block rounded-full py-2" : ""} hover:bg-primary-blue-400/75`}
