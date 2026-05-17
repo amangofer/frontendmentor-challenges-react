@@ -2,7 +2,7 @@ import Illustration from "../assets/images/illustration-working.svg?react";
 
 export function Hero() {
   return (
-    <section className="w-full overflow-x-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
+    <section className="w-full overflow-x-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 mb-28">
       <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center">
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/2 px-6">
           <h1 className="text-4xl lg:text-7xl font-bold text-neutral-gray-950 leading-tight">
